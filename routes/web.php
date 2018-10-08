@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.login');
+});
+Route::get('/trang-chu', function () {
+    return view('admin.index');
 });
