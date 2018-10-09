@@ -10,12 +10,12 @@
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                            <a class="js-arrow" href="{{route('sosadmin.trangchu')}}">
+                                <i class="fas fa-tachometer-alt"></i>Trang Chính</a>
                         </li>
                         <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                            <a href="{{route('sosadmin.taikhoan.index')}}">
+                                <i class="fas fa-chart-bar"></i>Tài Khoản Người Dùng</a>
                         </li>
                         <li>
                             <a href="table.html">

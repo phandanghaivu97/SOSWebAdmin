@@ -1,9 +1,5 @@
 @extends('template.admin.master') {{-- kế thừa từ master.blade.php --}}
 @section('content') {{-- gọi lại tên trong yield --}}
-<!-- MAIN CONTENT-->
-<div class="main-content">
-                <div class="section__content section__content--p30">
-                    <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="overview-wrap">
@@ -19,7 +15,7 @@
                                         <div class="overview-box clearfix">
                                             <div class="icon">
                                                 <i class="zmdi zmdi-account-o"></i>
-                                            </div>
+                                            </div><br>
                                             <div class="text">
                                                 <h2>10368</h2>
                                                 <span>members online</span>
@@ -31,7 +27,6 @@
                                     </div>
                                 </div>
                             </div>
-                            
                             <div class="col-sm-6 col-lg-3">
                                 <div class="overview-item overview-item--c2">
                                     <div class="overview__inner">

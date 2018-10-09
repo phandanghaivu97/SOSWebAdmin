@@ -34,7 +34,9 @@
     <link href="{{url('css/theme.css')}}" rel="stylesheet" media="all">
 
 </head>
-
+@if (Session::has('msg'))
+    <script> alert('{{ Session::get('msg') }}')</script>
+@endif
 <body class="animsition">
     <div class="page-wrapper">
         <div class="page-content--bge5">
@@ -43,19 +45,27 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="{{url('images/icon/logo.png')}}" alt="CoolAdmin">
+                                <img src="{{url('img/icon/logo.png')}}" alt="CoolAdmin">
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="" method="post">
+                            
+                            <form action="{{route('sosadmin.kiemtradangnhap')}}" method="post">
+                                {{csrf_field()}}
                                 <div class="form-group">
-                                    <label>Email Address</label>
-                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                    <label>Tên đăng nhập</label>
+                                    <input class="au-input au-input--full" type="text" name="tendangnhap" placeholder="Tên đăng nhập">
                                 </div>
+                                @if($errors->has('tendangnhap'))
+                                    <b><font color="red">{{$errors->first('tendangnhap')}}!</font></b>
+                                @endif
                                 <div class="form-group">
-                                    <label>Password</label>
+                                    <label>Mật khẩu</label>
                                     <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                 </div>
+                                @if($errors->has('password'))
+                                    <b><font color="red">{{$errors->first('password')}}!</font></b>
+                                @endif
                                 <div class="login-checkbox">
                                     <label>
                                         <input type="checkbox" name="remember">Remember Me
@@ -65,7 +75,6 @@
                                     </label>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-
                             </form>
 
                         </div>
