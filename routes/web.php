@@ -39,3 +39,26 @@ Route::get('/thong-tin-nguoi-dung-{cmnd}',[
 	'uses'=>'UserController@thongTinChiTiet',
 	'as'=>'sosadmin.user.detail'
 ]);
+
+Route::get('/tai-khoan-canh-sat',[
+	'uses'=>'PoliceController@index',
+	'as'=>'sosadmin.police.index'
+]);
+
+Route::get('/danh-sach-bao-cao',[
+	'uses'=>'ReportController@index',
+	'as'=>'sosadmin.report.index'
+]);
+Route::post('/danh-sach-bao-cao',[
+	'uses'=>'ReportController@timKiem',
+	'as'=>'sosadmin.report.search'
+]);
+Route::get('/danh-sach-bao-cao-{cmnd}',[
+	'uses'=>'ReportController@getDetail',
+	'as'=>'sosadmin.report.detail'
+]);
+
+Route::get('/ban-do',[
+	'uses'=>'MapController@index',
+	'as'=>'sosadmin.map.index'
+]);
