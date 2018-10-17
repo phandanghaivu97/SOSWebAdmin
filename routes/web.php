@@ -62,3 +62,19 @@ Route::get('/ban-do',[
 	'uses'=>'MapController@index',
 	'as'=>'sosadmin.map.index'
 ]);
+Route::get('/add-user',[
+	'uses'=>'UserController@getThemNguoiDung',
+	'as'=>'sosadmin.user.AddUser'
+]);
+Route::post('/add-user',[
+	'uses'=>'UserController@postThemNguoiDung',
+	'as'=>'sosadmin.user.AddUser'
+]);
+Route::post('/add-police',[
+	'uses'=>'PoliceController@postThemPolice',
+	'as'=>'sosadmin.user.AddPolice'
+]);
+Route::get('/add-police',[
+	'uses'=>'PoliceController@getThemPolice',
+	'as'=>'sosadmin.user.AddPolice'
+]);

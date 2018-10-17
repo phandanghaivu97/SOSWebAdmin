@@ -11,9 +11,9 @@
    <div class="col-md-12">
       <div class="overview-wrap" style="margin-bottom: 5%;">
          <h2 class="title-1">Tài Khoản Người Dùng</h2>
-         <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+         <a href="{{route('sosadmin.user.AddUser')}}" style="color:white;" class="au-btn au-btn-icon au-btn--green au-btn--small">
             <i class="zmdi zmdi-plus"></i>Thêm tài khoản
-         </button>
+         </a>
       </div>
       <table id="example" class="table table-striped table-bordered" style="width:100%">
          <thead>
