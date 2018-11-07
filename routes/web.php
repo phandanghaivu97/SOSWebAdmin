@@ -70,8 +70,26 @@ Route::get('/ban-do',[
 	'as'=>'sosadmin.map.index'
 ]);
 
+
 //App
 Route::get('/dang-nhap-user-{email}-{matKhau}',[
 	'uses'=>'TaiKhoanController@KiemtraDangNhapUser',
 	'as'=>'sosuser.login'
+    ]);
+Route::get('/add-user',[
+	'uses'=>'UserController@getThemNguoiDung',
+	'as'=>'sosadmin.user.AddUser'
+]);
+Route::post('/add-user',[
+	'uses'=>'UserController@postThemNguoiDung',
+	'as'=>'sosadmin.user.AddUser'
+]);
+Route::post('/add-police',[
+	'uses'=>'PoliceController@postThemPolice',
+	'as'=>'sosadmin.user.AddPolice'
+]);
+Route::get('/add-police',[
+	'uses'=>'PoliceController@getThemPolice',
+	'as'=>'sosadmin.user.AddPolice'
+
 ]);

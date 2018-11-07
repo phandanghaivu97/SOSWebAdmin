@@ -19,7 +19,5 @@ class TaiKhoanController extends Controller
             echo '1';
     }
 
-    public function dangKy(Request $request){
-        $
-    }
+
 }

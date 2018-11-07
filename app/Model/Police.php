@@ -13,5 +13,11 @@ class Police extends Model
 
     public function getDetail(){
 
+<<<<<<< HEAD
+=======
+    }
+    public function themPolice($sotaikhoan,$ten,$tendangnhap,$matkhau,$hinhanh,$donvi){
+    	DB::table('taikhoan_canhsat')->insert(['SO_TAI_KHOAN'=>$sotaikhoan,'HO_VA_TEN'=>$ten,'TEN_DANG_NHAP'=>$tendangnhap,'MAT_KHAU'=>$matkhau,'HINH_ANH'=>$hinhanh,'NGAY_KICH_HOAT'=>date('y-m-d'),'TINH_TRANG'=>1,'DON_VI'=>$donvi]);
+>>>>>>> b342b3e46e27d807cd1f010352f9119e50d0e69f
     }
 }

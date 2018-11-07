@@ -1,5 +1,3 @@
-
-
 @extends('template.admin.master') {{-- kế thừa từ master.blade.php --}}
 @section('content') {{-- gọi lại tên trong yield --}}
 <script type="text/javascript">
@@ -11,9 +9,9 @@
    <div class="col-md-12">
       <div style="margin-bottom: 5%;" class="overview-wrap">
          <h2 class="title-1">Tài Khoản Cảnh Sát</h2>
-         <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+         <a href = "{{route('sosadmin.user.AddPolice')}}" class="au-btn au-btn-icon au-btn--green au-btn--small">
             <i class="zmdi zmdi-plus"></i>Thêm tài khoản
-         </button>
+         </a>
       </div>
       <table id="example" class="table table-striped table-bordered" style="width:100%">
          <thead>
