@@ -7,6 +7,7 @@
        $('#example').DataTable();
    } );
 </script>
+<link rel="stylesheet" type="text/css" href="{{url('css/popup.css')}}">
 <div class="row">
    <div class="col-md-12">
       <div class="overview-wrap" style="margin-bottom: 5%;">
@@ -58,17 +59,14 @@
                      <a class="item" href="{{route('sosadmin.user.detail',['cmnd'=>$cmnd])}}" data-toggle="tooltip" data-placement="top" title="Xem">
                      <i class="zmdi zmdi-more"></i>
                      </a>
-                     <a class="item" href="{{route('sosadmin.user.detail',['cmnd'=>$cmnd])}}" data-toggle="tooltip" data-placement="top" title="Xem">
-                     <i class="zmdi zmdi-assignment-o"></i>
-                     </a>
                      @if($item->TINH_TRANG==0)
                      <button class="item" data-toggle="tooltip" data-placement="top" title="Xóa">
                      <i class="zmdi zmdi-delete"></i>
                      </button>
                      @else
-                     <button class="item" data-toggle="tooltip" data-placement="top" title="khóa">
+                    <a class="item" data-toggle="tooltip" data-placement="top" href="{{route('sosadmin.user.getlock',['id'=>$item->ID])}}" title="khóa">
                      <i class="zmdi zmdi-lock-outline"></i>
-                     </button>
+                     </a>
                      @endif
                   </div>
                </td>
@@ -89,5 +87,25 @@
       </table>
    </div>
 </div>
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Khóa tài khoản</h1>
+         <select class="form-control">
+            <option>Vĩnh viễn</option>
+         </select>
+    <button type="submit" class="btn">Khóa</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button>
+  </form>
+</div>
+<script>
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+</script>
+
 @endsection
 

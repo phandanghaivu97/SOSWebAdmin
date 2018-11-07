@@ -39,7 +39,14 @@ Route::get('/thong-tin-nguoi-dung-{cmnd}',[
 	'uses'=>'UserController@thongTinChiTiet',
 	'as'=>'sosadmin.user.detail'
 ]);
-
+Route::get('/khoa-tai-khoan-{id}',[
+	'uses'=>'TaiKhoanController@getKhoa',
+	'as'=>'sosadmin.user.getlock'
+]);
+Route::post('/khoa-tai-khoan',[
+	'uses'=>'TaiKhoanController@postKhoa',
+	'as'=>'sosadmin.user.postlock'
+]);
 Route::get('/tai-khoan-canh-sat',[
 	'uses'=>'PoliceController@index',
 	'as'=>'sosadmin.police.index'
@@ -61,4 +68,10 @@ Route::get('/danh-sach-bao-cao-{cmnd}',[
 Route::get('/ban-do',[
 	'uses'=>'MapController@index',
 	'as'=>'sosadmin.map.index'
+]);
+
+//App
+Route::get('/dang-nhap-user-{email}-{matKhau}',[
+	'uses'=>'TaiKhoanController@KiemtraDangNhapUser',
+	'as'=>'sosuser.login'
 ]);

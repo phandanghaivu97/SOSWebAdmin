@@ -1644,7 +1644,7 @@
 
   try {
     
-    $('[data-toggle="tooltip"]').tooltip();
+    //$('[data-toggle="tooltip"]').tooltip();
 
   } catch (error) {
     console.log(error);

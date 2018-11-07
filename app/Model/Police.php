@@ -12,6 +12,6 @@ class Police extends Model
     }
 
     public function getDetail(){
-    	
+
     }
 }

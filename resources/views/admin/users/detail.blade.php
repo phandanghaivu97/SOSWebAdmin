@@ -16,7 +16,9 @@
 col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
 		<img src="{{url('img/icon/avatar-01.jpg')}}" width="600px" height="600px">
 	</div>
-	<a class="btn btn-outline-secondary btn-sm" href="{{route('sosadmin.taikhoan.index')}}">Quay về danh sách</a>
+    <a class="btn btn-outline-secondary btn-sm" href="{{route('sosadmin.taikhoan.index')}}">Quay về danh sách</a>
+    @if($info->TINH_TRANG == 0)
 	<a class="btn btn-primary" href="{{route('sosadmin.taikhoan.xacnhan',['cmnd'=>$info->SO_CMND])}}" style="margin-left: 5%;">Xác nhận tài khoản</a>
+    @endif
 </div>
 @endsection
