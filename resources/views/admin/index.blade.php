@@ -17,8 +17,8 @@
                                                 <i class="zmdi zmdi-account-o"></i>
                                             </div><br>
                                             <div class="text">
-                                                <h2>10368</h2>
-                                                <span>members online</span>
+                                                <h2>103</h2>
+                                                <span>Người đăng ký trong tháng này</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -35,8 +35,8 @@
                                                 <i class="zmdi zmdi-shopping-cart"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>388,688</h2>
-                                                <span>items solid</span>
+                                                <h2>388</h2>
+                                                <span>Người cầu cứu tuần vừa rồi</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
@@ -53,8 +53,8 @@
                                                 <i class="zmdi zmdi-money"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>$1,060,386</h2>
-                                                <span>total earnings</span>
+                                                <h2>1,060,000đ</h2>
+                                                <span>Donation</span>
                                             </div>
                                         </div>
                                         <div class="overview-chart">
