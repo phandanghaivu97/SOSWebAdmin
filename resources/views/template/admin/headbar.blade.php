@@ -53,7 +53,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="{{url('img/icon/avatar-01.jpg')}}" alt="John Doe" />
+                                            <img src="{{url('img/'.Session::get('hinhAnh'))}}" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">{{Session::get('tenDangNhap')}}</a>

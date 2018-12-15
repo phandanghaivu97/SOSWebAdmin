@@ -4,7 +4,12 @@
 @section('content') {{-- gọi lại tên trong yield --}}
 <script type="text/javascript">
    $(document).ready(function() {
-       $('#example').DataTable();
+      var x = document.getElementsByClassName('active has-sub');
+      var i;
+      for(i=0;i<x.length;i++)
+         x[i].className = "none";
+      document.getElementById('tknd').className = 'active has-sub' ;
+      $('#example').DataTable();
    } );
 </script>
 @if(Session::get('TrangThai') != null)

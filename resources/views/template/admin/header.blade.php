@@ -8,7 +8,8 @@
     <meta name="author" content="Hau Nguyen">
     <meta name="keywords" content="au theme template">
     <!-- Title Page-->
-    <title>Dashboard</title>
+    <title>SOS Admin</title>
+    link rel="icon" type="image/ico" href="{{url('img/logo.png')}}">
     <!-- Fontfaces CSS-->
     <link href="{{url('css/font-face.css')}}" rel="stylesheet" media="all">
     <link href="{{url('vendor/font-awesome-4.7/css/font-awesome.min.css')}}" rel="stylesheet" media="all">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Session;
 use Illuminate\Http\Request;
+use App\Http\Requests\NguoiDungRequest;
 use App\Model\User;
 use Mail;
 class UserController extends Controller
@@ -17,7 +18,7 @@ class UserController extends Controller
     public function getThemNguoiDung(){
     	return view('admin.account.addNguoidung');
     }
-    public function postThemNguoiDung(Request $request){
+    public function postThemNguoiDung(NguoiDungRequest $request){
         $ten = $request->ten;
         $email=$request->email;
         $cmnd = $request->cmnd;

@@ -34,8 +34,9 @@ class TaiKhoanController extends Controller
     }
     public function kiemTraDangNhap(TaiKhoanRequest $request){
         $tenDangNhap = $request->tendangnhap;
-        $matkhau = $request->password;
-        $infoTaiKhoan = $this->taiKhoan->thongTinTaiKhoan($tenDangNhap,$matkhau);
+        $matKhau = $request->password;
+        $matkhauEncode = md5($matKhau);
+        $infoTaiKhoan = $this->taiKhoan->thongTinTaiKhoan($tenDangNhap,$matkhauEncode);
         if($infoTaiKhoan==null){
             session()->flash('msg','Đăng nhập thất bại!');
             return view('admin.login');

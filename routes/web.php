@@ -60,12 +60,12 @@ Route::post('/danh-sach-bao-cao',[
 	'uses'=>'ReportController@timKiem',
 	'as'=>'sosadmin.report.search'
 ]);
-Route::get('/danh-sach-bao-cao-{cmnd}',[
+Route::get('/danh-sach-bao-cao-{id}',[
 	'uses'=>'ReportController@getDetail',
 	'as'=>'sosadmin.report.detail'
 ]);
 
-Route::get('/ban-do',[
+Route::get('/ban-do-{lat}-{lng}',[
 	'uses'=>'MapController@index',
 	'as'=>'sosadmin.map.index'
 ]);
