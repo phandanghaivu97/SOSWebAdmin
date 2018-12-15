@@ -8,7 +8,7 @@ use App\model\User;
 class AddUser extends Controller
 {
     public function __construct(User $user){
-		$this->user=$user;//1
+		$this->user=$user;
 	}
     
 }

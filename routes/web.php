@@ -35,7 +35,7 @@ Route::get('/xac-nhan-tai-khoan-{cmnd}',[
 	'uses'=>'TaiKhoanController@xacNhanTaiKhoan',
 	'as'=>'sosadmin.taikhoan.xacnhan'
 ]);
-Route::get('/thong-tin-nguoi-dung-{cmnd}',[
+Route::get('/thong-tin-nguoi-dung-{id}',[
 	'uses'=>'UserController@thongTinChiTiet',
 	'as'=>'sosadmin.user.detail'
 ]);
@@ -69,8 +69,15 @@ Route::get('/ban-do',[
 	'uses'=>'MapController@index',
 	'as'=>'sosadmin.map.index'
 ]);
-
-
+//sua nguoi dung
+Route::get('/sua-nguoi_dung-{id}',[
+	'uses'=>'UserController@getSuaNguoiDung',
+	'as'=>'sosadmin.user.getedit'
+]);
+Route::post('/sua-nguoi_dung',[
+	'uses'=>'UserController@postSuaNguoiDung',
+	'as'=>'sosadmin.user.postedit'
+]);
 //App
 Route::get('/dang-nhap-user-{email}-{matKhau}',[
 	'uses'=>'TaiKhoanController@KiemtraDangNhapUser',

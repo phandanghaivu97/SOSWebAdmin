@@ -7,6 +7,11 @@
        $('#example').DataTable();
    } );
 </script>
+@if(Session::get('TrangThai') != null)
+  <script type="text/javascript">
+    alert('{{Session::get('TrangThai')}}');
+  </script>
+@endif
 <link rel="stylesheet" type="text/css" href="{{url('css/popup.css')}}">
 <div class="row">
    <div class="col-md-12">
@@ -31,7 +36,7 @@
          <tbody>
             @foreach($danhSachTaiKhoan as $item)
             @php
-            $cmnd = $item->SO_CMND;
+            $id = $item->ID;
             @endphp
             <tr>
                <td>{{$item->HO_VA_TEN}}</td>
@@ -56,18 +61,14 @@
                <td>{{$item->DIEN_THOAI}}</td>
                <td>
                   <div class="table-data-feature">
-                     <a class="item" href="{{route('sosadmin.user.detail',['cmnd'=>$cmnd])}}" data-toggle="tooltip" data-placement="top" title="Xem">
-                     <i class="zmdi zmdi-more"></i>
+                     <a class="item" href="{{ route('sosadmin.user.getedit',['id'=>$id]) }}" data-toggle="tooltip" data-placement="top" title="Sửa">
+                     <i class="zmdi zmdi-edit"></i>
                      </a>
-                     @if($item->TINH_TRANG==0)
-                     <button class="item" data-toggle="tooltip" data-placement="top" title="Xóa">
-                     <i class="zmdi zmdi-delete"></i>
-                     </button>
-                     @else
+                     
                     <a class="item" data-toggle="tooltip" data-placement="top" href="{{route('sosadmin.user.getlock',['id'=>$item->ID])}}" title="khóa">
                      <i class="zmdi zmdi-lock-outline"></i>
                      </a>
-                     @endif
+                     
                   </div>
                </td>
             </tr>

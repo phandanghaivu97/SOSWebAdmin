@@ -45,11 +45,24 @@ class TaiKhoanController extends Controller
             return redirect()->route('sosadmin.trangchu');
         }
     }
-    public function xacNhanTaiKhoan($cmnd){
-        $this->taiKhoan->xacNhanTaiKhoan($cmnd);
+    public function xacNhanTaiKhoan($id){
+        $status = $this->taiKhoan->xacNhanTaiKhoan($id);
+        // if($status){
+        //     $to_name = '';
+        // $to_email = $email;
+        // $data = array('name'=>$ten, "body" => "Một số thông tin của bạn đã được hệ thống cập nhật, vui lòng kiểm tra lại.");
+        // Mail::send('admin.mail.edit', $data, function($message) use ($to_name, $to_email) {
+        // $message->to($to_email, $to_name)
+        //         ->subject('Cập nhật thông tin');
+        // $message->from('sosapplication.caps1@gmail.com','Thông tin của bạn đã được thay đổi');
+        // });
+        // }
         return 'succcess';
     }
-
+    public function huyXacNhanTaiKhoan($id){
+        $status = $this->taiKhoan->xacNhanTaiKhoan($id);
+        
+    }
     public function KiemtraDangNhapUser($email,$matKhau){
         $response = array();
         $infoTaiKhoan = $this->taiKhoan->thongTinTaiKhoanUser($email,$matKhau);

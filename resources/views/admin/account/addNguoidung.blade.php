@@ -16,7 +16,7 @@
          <label>Ngày Sinh</label><input class="form-control" type="date" name="ngaysinh" value="">
          <label>Email</label><input class="form-control" type="email" name="email" value="">
          <label>Điện thoại</label><input class="form-control" type="text" name="dienthoai" value="">
-         <label>Mật khẩu</label><input class="form-control" type="password" name="matkhau" value="">
+         <label>Mật khẩu</label><input class="form-control" type="text" name="matkhau" value="">
          <label>Hình ảnh</label><input class="form-control" type="file" name="hinhanh" value="">
          <br>
          <input type="submit" class="au-btn au-btn-icon au-btn--green au-btn--small" name="" value="Thêm tài khoản">
