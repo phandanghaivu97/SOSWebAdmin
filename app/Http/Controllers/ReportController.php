@@ -18,9 +18,9 @@ class ReportController extends Controller
     	$danhSach = $this->report->timKiem($keyWord);
     	return view('admin.report.index',compact('danhSach'));
     }
-    public function getDetail($cmnd){
+    public function getDetail($id){
     	$danhSach = $this->report->getname();
-    	$danhSachChiTiet = $this->report->getDetail($cmnd);
+    	$danhSachChiTiet = $this->report->getDetail($id);
     	return view('admin.report.index',compact('danhSach','danhSachChiTiet'));
     }
 

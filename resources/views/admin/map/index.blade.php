@@ -9,14 +9,16 @@
 	</div>
 	<script>
 function myMap() {
-var mapOptions = {
-    center: new google.maps.LatLng(	16.047079, 	108.206230),
-    zoom: 10,
-    mapTypeId: google.maps.MapTypeId.HYBRID
-}
-var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+	var myLatLng = {lat: 16.063502, lng: 108.209799};
+	var mapOptions = {
+		center: myLatLng,
+		zoom: 19,
+		mapTypeId: google.maps.MapTypeId.HYBRID
+	}
+	var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+	var marker = new google.maps.Marker({position: myLatLng, map: map});
 }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaZ3DL4SDQidUfXeT3noyB_tcRgv1GkE4&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzmyhWaNEQ_i55-LLOfNPka-8BAhZRUaM&callback=myMap"></script>
 @endsection

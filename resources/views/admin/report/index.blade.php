@@ -28,14 +28,15 @@
       <div class="au-card au-card--bg-blue au-card-top-countries m-b-30">
          <div class="au-card-inner">
             <div class="table-responsive">
+               <h3 style="color: #fff">Tên người dùng</h3>
                <table class="table table-top-countries">
                   <tbody>
                      @foreach($danhSach as $item)
                      @php
-                     	$cmnd = $item->NGUOI_BI_BAO_CAO;
+                     	$id = $item->NGUOI_BI_BAO_CAO;
                      @endphp
 	                     <tr>
-	                        <td><a href="{{route('sosadmin.report.detail',['cmnd'=>$cmnd])}}">{{$item->HO_VA_TEN}}</a></td>
+	                        <td><a href="{{route('sosadmin.report.detail',['id'=>$id])}}">{{$item->HO_VA_TEN}}</a></td>
 	                        <td class="text-right">{{$item->SO_LAN}}</td>
 	                     </tr>
                      @endforeach
@@ -52,7 +53,9 @@
                <tr>
                   <th>Thời gian</th>
                   <th>Người báo cáo</th>
+                  <th>Tọa độ</th>
                   <th>Ghi chú</th>
+                  <th>Khóa tài khoản</th>
                </tr>
             </thead>
             <tbody>
@@ -60,8 +63,10 @@
 	            	@foreach($danhSachChiTiet as $item)
 	               		<tr>
                   			<td>{{$item->NGAY_BAO_CAO}}</td>
-                  			<td>{{$item->HO_VA_TEN}}</td>
-                  			<td>{{$item->GHI_CHU}}</td>
+                           <td>{{$item->HO_VA_TEN}}</td>
+                           <td><a href="{{route('sosadmin.map.index',['lat'=>$item->KINH_DO,'lng'=>$item->VI_DO])}}" style="color: #1a8cff;">Xem</a></td>
+                           <td>{{$item->GHI_CHU}}</td>
+                           <td><a href="{{route('sosadmin.user.getlock',['id'=>$item->NGUOI_BI_BAO_CAO])}}" style="color: #1a8cff;">Thực hiện</a></td>
                			</tr>
 	                @endforeach
                 @endif

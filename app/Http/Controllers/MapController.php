@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class MapController extends Controller
 {
-    public function index(){
-    	return view('admin.map.index');
+    public function index($lat, $lng){
+    	return view('admin.map.index',compact('lat','lng'));
     }
 }

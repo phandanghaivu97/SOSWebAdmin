@@ -26,7 +26,7 @@
                                 <i class="fas fa-calendar-alt"></i>Lịch Sử Gần Đây</a>
                         </li>
                         <li>
-                            <a href="{{route('sosadmin.map.index')}}">
+                            <a href="">
                                 <i class="fas fa-map-marker-alt"></i>Địa Điểm Nóng</a>
                         </li>
                         <li>
