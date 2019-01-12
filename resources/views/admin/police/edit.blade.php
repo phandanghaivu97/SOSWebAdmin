@@ -17,24 +17,25 @@
        document.getElementById('tkcs').className = 'active has-sub' ;
    } );
 </script>
-<h3 style="margin-bottom:2%;">Thêm mới cảnh sát</h3>
+<h3 style="margin-bottom:2%;">Chỉnh sửa thông tin</h3>
 <div class="form-group" >
-   <form action="{{route('sosadmin.user.AddPolice')}}"" method="post" accept-charset="utf-8">
+   <form action="{{route('sosadmin.user.PostEditPolice')}}" method="post" accept-charset="utf-8">
       {{csrf_field()}}
+      <input type="hidden" name="id" value="{{$data->SO_TAI_KHOAN}}">
       <div class="form-group">
-         <label>Họ và tên</label><input class="form-control" type="text" name="ten" placeholder="Nhập họ và tên" value="">
+         <label>Họ và tên</label><input class="form-control" type="text" name="tene" placeholder="Nhập họ và tên" value="{{$data->HO_VA_TEN}}">
       </div>
-      @if($errors->has('ten'))
+      @if($errors->has('tene'))
       <b><font color="red">{{$errors->first('ten')}}!</font></b>
       @endif
       <div class="form-group">
-         <label>Tên đăng nhập</label><input class="form-control" type="text" name="tendangnhap" placeholder="Nhập tên đăng nhập" value="">
+         <label>Tên đăng nhập</label><input class="form-control" type="text" name="tendangnhap" placeholder="Nhập tên đăng nhập" value="{{$data->TEN_DANG_NHAP}}">
       </div>
       @if($errors->has('tendangnhap'))
       <b><font color="red">{{$errors->first('tendangnhap')}}!</font></b>
       @endif
       <div class="form-group">
-         <label>Mật khẩu</label><input class="form-control" type="text" name="matkhau" placeholder="Mật khẩu" value="">
+         <label>Mật khẩu</label><input class="form-control" type="text" name="matkhau" placeholder="Mật khẩu" value="{{$data->MAT_KHAU}}">
       </div>
       @if($errors->has('matkhau'))
       <b><font color="red">{{$errors->first('matkhau')}}!</font></b>
@@ -43,16 +44,17 @@
          <label>Đơn vị</label>
          <select name="donvi" class="form-control">
             @foreach($dsDonVi as $item)
-            <option value="{{$item->MA_DON_VI}}">{{$item->TEN_DON_VI}}</option>
+                @if($data->DON_VI == $item->MA_DON_VI)
+                <option value="{{$item->MA_DON_VI}}" selected>{{$item->TEN_DON_VI}}</option>
+                @else
+                <option value="{{$item->MA_DON_VI}}">{{$item->TEN_DON_VI}}</option>
+                @endif
             @endforeach
          </select>
       </div>
       <div class="form-group">
-         <label>Hình ảnh</label><input class="form-control" type="file" name="hinhanh" value="">
+         <label>Hình ảnh</label><input class="form-control" type="file" name="hinhanhe" value="">
       </div>
-      @if($errors->has('hinhanh'))
-      <b><font color="red">{{$errors->first('hinhanh')}}!</font></b>
-      @endif
       <br>
       <input type="submit" class="au-btn au-btn-icon au-btn--green au-btn--small" name="" value="Thêm tài khoản">
    </form>

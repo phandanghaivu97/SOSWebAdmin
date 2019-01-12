@@ -65,11 +65,15 @@ Route::get('/danh-sach-bao-cao-{id}',[
 	'as'=>'sosadmin.report.detail'
 ]);
 
-Route::get('/ban-do-{lat}-{lng}',[
-	'uses'=>'MapController@index',
+Route::get('/ban-do',[
+	'uses'=>'UserController@layLichSu',
 	'as'=>'sosadmin.map.index'
 ]);
-//sua nguoi dung
+//nguoi dung
+Route::get('/lich-su-{id}',[
+	'uses'=>'UserController@lichSu',
+	'as'=>'sosadmin.user.history'
+]);
 Route::get('/sua-nguoi_dung-{id}',[
 	'uses'=>'UserController@getSuaNguoiDung',
 	'as'=>'sosadmin.user.getedit'
@@ -78,6 +82,20 @@ Route::post('/sua-nguoi_dung',[
 	'uses'=>'UserController@postSuaNguoiDung',
 	'as'=>'sosadmin.user.postedit'
 ]);
+//api
+Route::post('/dang-nhap-user',[
+	'uses'=>'APIController@dangNhap',
+	'as'=>'sosuser.login'
+]);
+Route::post('/dang-ky-user',[
+	'uses'=>'APIController@dangKy',
+	'as'=>'sosuser.register'
+]);
+Route::post('/luu-hoat-dong',[
+	'uses'=>'APIController@luuHoatDong',
+	'as'=>'sosuser.log'
+]);
+
 //App
 Route::get('/dang-nhap-user-{email}-{matKhau}',[
 	'uses'=>'TaiKhoanController@KiemtraDangNhapUser',
@@ -91,12 +109,23 @@ Route::post('/add-user',[
 	'uses'=>'UserController@postThemNguoiDung',
 	'as'=>'sosadmin.user.AddUser'
 ]);
-Route::post('/add-police',[
+//canh sat
+Route::post('/them-canh-sat',[
 	'uses'=>'PoliceController@postThemPolice',
 	'as'=>'sosadmin.user.AddPolice'
 ]);
-Route::get('/add-police',[
+Route::get('/them-canh-sat',[
 	'uses'=>'PoliceController@getThemPolice',
 	'as'=>'sosadmin.user.AddPolice'
+
+]);
+
+Route::post('/sua-canh-sat',[
+	'uses'=>'PoliceController@postSuaPolice',
+	'as'=>'sosadmin.user.PostEditPolice'
+]);
+Route::get('/sua-canh-sat-{id}',[
+	'uses'=>'PoliceController@getSuaPolice',
+	'as'=>'sosadmin.user.editPolice'
 
 ]);

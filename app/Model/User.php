@@ -33,4 +33,13 @@ class User extends Model
         }
         return $status;
     }
+    public function getHistoryLocation($id){
+        $data = DB::table('lichsu')->join('nguoidung','nguoidung.ID','=','lichsu.NGUOI_DUNG')->where('NGUOI_DUNG',$id)->get();
+    	return $data;
+    }
+
+    public function layLichSu(){
+        $data = DB::table('lichsu')->select('KINH_DO','VI_DO','THOI_GIAN')->get();
+        return $data;
+    }
 }

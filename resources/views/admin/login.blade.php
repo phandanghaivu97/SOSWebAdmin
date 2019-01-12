@@ -45,7 +45,7 @@
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="#">
-                                <img src="{{url('img/icon/logo.png')}}" alt="CoolAdmin">
+                                <img src="{{url('img/logo.png')}}" alt="CoolAdmin">
                             </a>
                         </div>
                         <div class="login-form">
@@ -67,9 +67,6 @@
                                     <b><font color="red">{{$errors->first('password')}}!</font></b>
                                 @endif
                                 <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember">Remember Me
-                                    </label>
                                     <label>
                                         <a href="#">Forgotten Password?</a>
                                     </label>

@@ -4,13 +4,18 @@
 @section('content') {{-- gọi lại tên trong yield --}}
 <script type="text/javascript">
    $(document).ready(function() {
-       $('#example').DataTable();
+      var x = document.getElementsByClassName('active has-sub');
+      var i;
+      for(i=0;i<x.length;i++)
+         x[i].className = "none";
+      document.getElementById('tknd').className = 'active has-sub' ;
+      $('#example').DataTable();
    } );
 </script>
 @if(Session::get('TrangThai') != null)
-  <script type="text/javascript">
-    alert('{{Session::get('TrangThai')}}');
-  </script>
+<script type="text/javascript">
+   alert('{{Session::get('TrangThai')}}');
+</script>
 @endif
 <link rel="stylesheet" type="text/css" href="{{url('css/popup.css')}}">
 <div class="row">
@@ -18,7 +23,7 @@
       <div class="overview-wrap" style="margin-bottom: 5%;">
          <h2 class="title-1">Tài Khoản Người Dùng</h2>
          <a href="{{route('sosadmin.user.AddUser')}}" style="color:white;" class="au-btn au-btn-icon au-btn--green au-btn--small">
-            <i class="zmdi zmdi-plus"></i>Thêm tài khoản
+         <i class="zmdi zmdi-plus"></i>Thêm tài khoản
          </a>
       </div>
       <table id="example" class="table table-striped table-bordered" style="width:100%">
@@ -30,7 +35,7 @@
                <th>Ngày kích hoạt</th>
                <th>Tình trạng</th>
                <th>Điện thoại</th>
-               <th></th>
+               <th>Thao tác</th>
             </tr>
          </thead>
          <tbody>
@@ -64,11 +69,12 @@
                      <a class="item" href="{{ route('sosadmin.user.getedit',['id'=>$id]) }}" data-toggle="tooltip" data-placement="top" title="Sửa">
                      <i class="zmdi zmdi-edit"></i>
                      </a>
-                     
-                    <a class="item" data-toggle="tooltip" data-placement="top" href="{{route('sosadmin.user.getlock',['id'=>$item->ID])}}" title="khóa">
+                     <a class="item" data-toggle="tooltip" data-placement="top" href="{{route('sosadmin.user.getlock',['id'=>$item->ID])}}" title="khóa">
                      <i class="zmdi zmdi-lock-outline"></i>
                      </a>
-                     
+                     <a class="item" data-toggle="tooltip" data-placement="top" href="{{route('sosadmin.user.history',['id'=>$item->ID])}}" title="Lịch sử">
+                     <i class="zmdi zmdi-pin"></i>
+                     </a>
                   </div>
                </td>
             </tr>
@@ -82,31 +88,30 @@
                <th>Ngày kích hoạt</th>
                <th>Tình trạng</th>
                <th>Điện thoại</th>
-               <th></th>
+               <th>Thao tác</th>
             </tr>
          </tfoot>
       </table>
    </div>
 </div>
 <div class="form-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
-    <h1>Khóa tài khoản</h1>
-         <select class="form-control">
-            <option>Vĩnh viễn</option>
-         </select>
-    <button type="submit" class="btn">Khóa</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button>
-  </form>
+   <form action="/action_page.php" class="form-container">
+      <h1>Khóa tài khoản</h1>
+      <select class="form-control">
+         <option>Vĩnh viễn</option>
+      </select>
+      <button type="submit" class="btn">Khóa</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Hủy</button>
+   </form>
 </div>
 <script>
-function openForm() {
-    document.getElementById("myForm").style.display = "block";
-}
+   function openForm() {
+       document.getElementById("myForm").style.display = "block";
+   }
 
-function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-}
+   function closeForm() {
+       document.getElementById("myForm").style.display = "none";
+   }
 </script>
-
 @endsection
 

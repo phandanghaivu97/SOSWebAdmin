@@ -11,9 +11,7 @@ class IndexController extends Controller
         $this->taiKhoan = $taiKhoan;
     }
     public function index(){
-    	if(Session::get('tenDangNhap')==null)
-    		return redirect()->route('sosadmin.dangnhap');
-        $data = $this->taiKhoan->taiKhoanChuaXanNhan();
+        $data = $this->taiKhoan->taiKhoanChuaXanNhanaaaaaaaaa();
     	return view('admin.index',compact('data'));
     }
 }
